@@ -1,0 +1,40 @@
+html, 
+body {
+    min-height: 100%;
+}
+body {
+  min-height: 100vh;
+  transition: 0.3s;
+  position: relative;
+}
+body::before {
+  content: '';
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: -1;
+}
+body.dark::before {
+  transition: 0.3s;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+.no-img {
+  height: 225px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.no-img svg {
+  width: 100px;
+}
