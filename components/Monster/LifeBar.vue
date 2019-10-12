@@ -1,9 +1,9 @@
 <template>
   <div class="text-center">
-    <div class="card position-relative" @click="hp = 15">
+    <div class="card position-relative">
       <div class="lifebar" :style="{backgroundColor: hp <= 15 ? '#dc3545' : '#28a745', width: hp + '%'}"></div>
+      <span class="hp">{{hp}} HP</span>
     </div>
-      {{who}}
   </div>
 </template>
 
@@ -14,10 +14,7 @@ export default {
       type: String,
       default: "#28a745"
     },
-    hp: Number,
-    who: {
-      type: String
-    }
+    hp: Number
   }
 };
 </script>
@@ -32,5 +29,12 @@ export default {
   position: absolute;
   left: 0;
   transition: 0.3s;
+}
+.hp {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 4px #fff;
 }
 </style>
